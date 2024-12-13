@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Theatre Ticket Booking Application</title>
+    <link rel="stylesheet" href="/client/CSS/style.css">
+</head>
+
+<body>
+    <div id="box">
+        <div class="sign">
+            <h1 onclick="signIn()" id="si">Sign In</h1>
+            <h1 onclick="signUp()" id="su">Sign Up</h1>
+        </div>
+
+        <div id="signup">
+            <form action="" onsubmit="signUpSubmit(event)">
+                <input type="text" id="name" placeholder="Name" required>
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="text" id="phone" placeholder="Phone Number" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <input type="password" id="cpassword" placeholder="Confirm Password" required>
+                <input type="file" id="fileElement" required>
+                <input type="submit" value="Submit" class="sub">
+            </form>
+        </div>
+
+        <div id="signin">
+            <form action="" onsubmit="signInSubmit(event)">
+                <input type="email" id="email1" placeholder="Email">
+                <input type="password" id="password2" placeholder="Password">
+                <input type="submit" value="Submit" class="sub">
+            </form>
+        </div>
+    </div>
+
+    <div id="menu">
+        <ol>
+            <li onclick="home()">Home</li>
+            <li onclick="movies()">Movies</li>
+            <li onclick="purchase()">Ticket Booking</li>
+            <li onclick="bookingHistory()">Booking History</li>
+            <li onclick="recharge()">Wallet Recharge </li>
+            <li onclick="showBalance()">Show Balance</li>
+            <li onclick="logout()">Log Out</li>
+        </ol>
+    </div>
+
+    <div id="home">
+        <h1 class="wel1"><img id="imgTag"></h1>
+        <h1 id="welcome"></h1>
+    </div>
+
+    <div id="movies">
+        <button onclick="addMovie()" class="movieButton">Add Movie</button>
+        <table id="tb">
+            <thead>
+                <tr>
+                    <th>Movie Name</th>
+                    <th>Language</th>
+                    <th>Modify</th>
+                </tr>
+            </thead>
+            <tbody id="tbody1">
+
+            </tbody>
+        </table>
+    </div>
+
+    <div id="purchase">
+        <table id="purchaseTable">
+            <tr>
+                <th>Movie Name</th>
+                <th>Theatre Name</th>
+                <th>Ticket Price</th>
+                <th>Seat Availability</th>
+                <th>Action</th>
+            </tr>
+        </table>
+    </div>
+
+    <div id="history">
+        <table id="tb3">
+            <thead>
+                <tr>
+                    <th>Movie Name</th>
+                    <th>Theatre</th>
+                    <th>Seat Count</th>
+                    <th>Total Amount</th>
+                    <th>Booking Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+
+    <div id="top">
+        <h5 id="curBalance"></h5>
+        <input type="number" placeholder="Enter Amount" id="amount" required>
+        <button onclick="deposit()">Deposit</button>
+    </div>
+
+    <div id="screenings">
+        <button onclick="addScreening()" class="screeningButton">Add Screening</button>
+        <table id="tb1">
+            <thead>
+                <tr>
+                    <th>Movie Id</th>
+                    <th>Theatre Id</th>
+                    <th>No. Of Seats</th>
+                    <th>Ticket Price</th>
+                    <th>Modify</th>
+                </tr>
+            </thead>
+            <tbody id="tbody2">
+
+            </tbody>
+        </table>
+    </div>
+
+    <div id="show">
+        <h5 id="balance"></h5>
+    </div>
+
+    <div id="form1">
+        <h1>Movie Details</h1>
+        <input type="text" id="movieName" placeholder="Movie Name" />
+        <input type="text" id="language" placeholder="Language" />
+        <button onclick="addMovieTo()">submit</button>
+    </div>
+
+    <div id="form2">
+        <h1>Screening Details</h1>
+        <input type="number" id="movieId" placeholder="Movie ID" />
+        <input type="number" id="theatreId" placeholder="Theatre ID" />
+        <input type="number" id="seats" placeholder="Seats Available" />
+        <input type="number" id="price" placeholder="Ticket Price" />
+        <button onclick="addScreeningTo()">submit</button>
+    </div>
+
+    <script src="/client/Typescript/script.js"></script>
+</body>
+
+</html>
